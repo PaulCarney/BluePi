@@ -2,7 +2,7 @@
 #define MCP3424_H_
 
 #include <stdint.h>
-
+#include <stdio.h>
 #define MCP3424_OK 0
 #define MCP3424_ERR -1
 #define MCP3424_WARN -2
