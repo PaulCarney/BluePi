@@ -135,7 +135,7 @@ static  int16_t sine_int16_44100[108];
 
 
 void read_input(){
-    int fd;
+    int fd=0;
 	mcp3424 j2;
     int it = 0;
 	mcp3424_init(&j2, fd, 0x68, MCP3424_RESOLUTION_14);
