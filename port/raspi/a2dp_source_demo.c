@@ -131,18 +131,17 @@ static  uint8_t media_sbc_codec_capabilities[] = {
 }; 
 
 // input signal: pre-computed int16 sine wave, 44100 Hz at 441 Hz
-static const int16_t sine_int16_44100[108];
+static  int16_t sine_int16_44100[108];
 
 
 void read_input(){
     int fd;
 	mcp3424 j2;
-	int i;
     int it = 0;
 	mcp3424_init(&j2, fd, 0x68, MCP3424_RESOLUTION_14);
 	mcp3424_set_conversion_mode(&j2, MCP3424_CONVERSION_MODE_CONTINUOUS);
     while (it < 108) {
-        sine_int16_44100[it] = mcp3424_get_raw(&j2, MCP3424_CHANNEL_1,);
+        sine_int16_44100[it] = mcp3424_get_raw(&j2, MCP3424_CHANNEL_1);
         printf("%d", sine_int16_44100[it]);
         if (j2.err) {
             printf("error: mcp3424_get_raw: %s\n", j2.errstr);
@@ -152,7 +151,7 @@ void read_input(){
 	}
 }
 
-static const int num_samples_sine_int16_44100 = sizeof(sine_int16_44100) / 2;
+static  int num_samples_sine_int16_44100 = sizeof(sine_int16_44100) / 2;
 
 // input signal: pre-computed int16 sine wave, 48000 Hz at 441 Hz
 static int16_t sine_int16_48000[]= {
