@@ -74,6 +74,9 @@
 #include "btstack.h"
 #include "hxcmod.h"
 #include "mods/mod.h"
+#include <fcntl.h>
+
+
 
 
 // logarithmic volume reduction, samples are divided by 2^x
