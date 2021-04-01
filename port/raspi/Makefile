@@ -17,13 +17,14 @@ CORE += \
 	wav_util.c 					\
 	btstack_stdin_posix.c \
 	raspi_get_model.c \
-	rijndael.c
+	rijndael.c \
+	mcp3424.c
 
 # examples
 include ${BTSTACK_ROOT}/example/Makefile.inc
 
 # use (cross)compiler for Raspi
-CC = arm-linux-gnueabihf-gcc
+CC = arm-linux-gnueabihf-gcc 
 
 CFLAGS  += -g -Wall -Werror \
 	-I$(BTSTACK_ROOT)/platform/embedded \
