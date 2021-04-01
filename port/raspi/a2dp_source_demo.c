@@ -74,7 +74,7 @@
 #include "btstack.h"
 #include "hxcmod.h"
 #include "mods/mod.h"
-#include "mcp3424.h"
+
 
 // logarithmic volume reduction, samples are divided by 2^x
 // #define VOLUME_REDUCTION 3
@@ -135,7 +135,7 @@ static  int16_t sine_int16_44100[108];
 
 
 void read_input(){
-    int fd=0;
+    int fd=open("/dev/i2c-1", O_RDWR);
 	mcp3424 j2;
     int it = 0;
 	mcp3424_init(&j2, fd, 0x68, MCP3424_RESOLUTION_14);
