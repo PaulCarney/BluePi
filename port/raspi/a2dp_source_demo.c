@@ -145,7 +145,6 @@ void read_input(){
 	mcp3424_set_conversion_mode(&j2, MCP3424_CONVERSION_MODE_CONTINUOUS);
     while (it < 108) {
         sine_int16_44100[it] = mcp3424_get_raw(&j2, MCP3424_CHANNEL_1);
-        printf("%d", sine_int16_44100[it]);
         if (j2.err) {
             printf("error: mcp3424_get_raw: %s\n", j2.errstr);
             close(fd);
