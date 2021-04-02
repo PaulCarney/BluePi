@@ -151,6 +151,7 @@ void read_input(){
             close(fd);
             exit(EXIT_FAILURE);
         }
+        ++it;
 	}
 }
 
